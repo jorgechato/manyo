@@ -16,12 +16,13 @@ Update your `~/.npmrc` file to include the following line.
 # ~/.npmrc
 registry=https://registry.npmjs.org/
 @jorgechato:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=<MD_TO_REQUEST_TOKEN>
 ```
 
 Then install the package.
 
 ```bash
-npm install @jorgechato/manyo
+$ npm install @jorgechato/manyo
 ```
 
 ## List of components you can use
@@ -44,7 +45,7 @@ import {
 - Header
 - Logo
 
-This is an example of the basic layout you can create with these components.
+Some oif the components require to pass some props to work properly. This is an example of the props you need to pass to the `Header` component.
 
 ```js
 info = {
@@ -86,12 +87,12 @@ SOCIALS: [
 }
 ```
 
-### Readme component
+### `Readme` component
 
 It gets the content of a markdown file and renders it as HTML.
 It's required that you create a `/api/git/readme` endpoint that returns the content of a file in the repo as `string`.
 
-### Repo component
+### `Repository` & `RepositoryList` component
 
 It renders a project card with a title, description, tags and a link to the repo.
 It's required that you create a `/api/git/repositories` endpoint that returns the following object as an object list.
@@ -113,7 +114,7 @@ export interface Repository {
 // return Repository[]
 ```
 
-### Project component
+### `Project` & `ProjectList` component
 
 It renders a project card with a title, description, version, a link to the project...
 It's part of the status page components, which means that it's going to check the health of your applications and render a status indicator.
