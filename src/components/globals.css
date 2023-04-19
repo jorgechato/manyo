@@ -68,6 +68,6 @@
 
 @layer base {
     .prose img {
-        @apply h-auto mx-auto transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover: grayscale-0;
+        @apply h-auto mx-auto transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0;
     }
 }
