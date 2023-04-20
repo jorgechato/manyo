@@ -39,6 +39,63 @@ import {
 } from '@jorgechato/manyo'
 ```
 
+### `Tailwindcss` & `styles` configuration
+
+You can inherit the tailwindcss configuration from this package.
+
+```js
+// tailwind.config.js
+const tailwindConfig = require('@jorgechato/manyo/tailwind.config');
+
+
+// tailwindConfig.theme.extend.colors.accent = colors.blue[600];
+tailwindConfig.content = [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+];
+
+/** @type {import('tailwindcss').Config} */
+module.exports = tailwindConfig;
+```
+
+To import the styling just add the following line wherever you want to use the styles.
+
+```js
+import '@jorgechato/manyo/dist/style/lib.css';
+```
+
+### Fonts
+
+You can use the fonts from this package by adding either `font-logo` or `font-h1` to your element.
+`<Logo />` uses the `font-logo` class, and `<h1></h1>` uses the `font-h1` class.
+
+To modify the font you can set up the `fontFamily` in tailwind config file or the `--font-<family-name>` in your `css` file.
+
+```js
+//tailwind.config.js
+module.exports = {
+//...
+  theme: {
+//...
+    extend: {
+      fontFamily: {
+        logo: ['logo'],
+        h1: ['h1'],
+      },
+//...
+    },
+  },
+};
+```
+
+```css
+/* style.css */
+:root {
+    --font-logo: 'ui-monospace', 'SFMono-Regular';
+    --font-h1: 'Menlo', 'Courier', 'monospace';
+}
+```
+
 ### Basic layout components
 
 - Footer

@@ -1,4 +1,3 @@
-import "../fonts/font.css";
 import Link from 'next/link';
 
 import { LogoType } from './Logo.types';

@@ -10,6 +10,8 @@
     --font-body: var(--font-display);
     --font-mono: 'ui-monospace', 'SFMono-Regular', 'Consolas', 'Liberation Mono',
         'Menlo', 'Courier', 'monospace';
+    --font-logo: 'logo', var(--font-display);
+    --font-h1: 'h1', var(--font-display);
 
     --colors-primary: #0040dd;
     --colors-primary-light: color(#0040dd l(90%));
@@ -33,6 +35,9 @@
     --colors-grey-dark: #aeaeb2;
     --colors-grey-darker: #8e8e93;
     --colors-grey-darkest: #6c6c70;
+
+    --colors-code: #c9d1d9;
+    --colors-code-bg: #0d1117;
 }
 
 .dark {

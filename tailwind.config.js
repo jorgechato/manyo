@@ -4,18 +4,18 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      logo: ['logo'],
-    },
     screens: {
       md: '800px',
     },
     extend: {
+      fontFamily: {
+        logo: ['logo', 'ui-sans-serif', 'ui-monospace'],
+        h1: ['h1', 'ui-sans-serif', 'ui-monospace'],
+      },
       colors: {
         bg: 'var(--colors-bg)',
         accent: colors.emerald[600],
@@ -39,8 +39,8 @@ module.exports = {
           darkest: 'var(--colors-grey-darkest)',
         },
         code: {
-          'bg': '#0d1117',
-          'color': '#c9d1d9',
+          'bg': 'var(--colors-code-bg)',
+          'color': 'var(--colors-code)',
         }
       },
       borderColor: (theme) => ({

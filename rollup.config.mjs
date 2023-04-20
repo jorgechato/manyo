@@ -3,6 +3,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
+import copy from 'rollup-plugin-copy';
+import banner2 from 'rollup-plugin-banner2';
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -16,7 +18,6 @@ export default [
                 file: packageJson.main,
                 format: "cjs",
                 sourcemap: true,
-                // name: "manyo-lib",
             },
             {
                 file: packageJson.module,
@@ -25,16 +26,32 @@ export default [
             },
         ],
         plugins: [
+            postcss({
+                config: {
+                    path: './postcss.config.js',
+                },
+                extensions: ['.css'],
+                minimize: true,
+                extract: "lib.css",
+            }),
             resolve(),
             commonjs(),
             typescript({ tsconfig: "./tsconfig.json" }),
-            postcss(),
+            banner2(() => `'use client';`),
         ],
     },
     {
         input: "dist/esm/types/index.d.ts",
         output: [{ file: "dist/index.d.ts", format: "esm" }],
         external: [/\.css$/],
-        plugins: [dts()],
+        plugins: [
+            copy({
+                targets: [
+                    { src: 'dist/esm/*.css', dest: 'dist/style' },
+                    { src: '**/*.ttf', dest: 'dist/fonts' }
+                ]
+            }),
+            dts(),
+        ],
     },
 ];

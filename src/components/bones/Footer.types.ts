@@ -2,7 +2,7 @@ import { Social, SiteMap } from '../types/Config.types';
 
 
 export type FooterType = {
-    socialConfig: Social[];
-    siteMapConfig: SiteMap[];
-    author: string;
+    socials?: Social[];
+    siteMap?: SiteMap[];
+    author?: string;
 }
