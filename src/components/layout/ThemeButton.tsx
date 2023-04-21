@@ -1,5 +1,6 @@
-'use client';
 import { useEffect } from 'react';
+
+import { RegisterLanguages } from '../../lib/github/RegisterLanguages';
 
 
 function setInitialTheme(isDarkMode: boolean) {
@@ -19,6 +20,7 @@ export function ThemeButton() {
         const isDarkMode = localStorage.getItem('theme') === 'dark';
 
         setInitialTheme(isDarkMode);
+        RegisterLanguages();
     }, []);
 
     const handleToggle = () => {

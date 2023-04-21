@@ -1,15 +1,4 @@
-export interface PinnedRepos {
-    name: string;
-    description: string;
-    url: string;
-    homepageUrl: string;
-    stargazerCount: number;
-    forkCount: number;
-    primaryLanguage: {
-        name: string;
-        color: string;
-    };
-}
+import { PinnedRepos, ProfileStatus } from "./Github.types";
 
 
 export function GetPinnedRepos(): Promise<PinnedRepos[]> {
@@ -75,7 +64,7 @@ export function GetReadme(): Promise<string> {
 }
 
 
-export function GetStatus(): Promise<string> {
+export function GetStatus(): Promise<ProfileStatus> {
     return fetch("https://api.github.com/graphql", {
         method: "POST",
         headers: {
@@ -96,5 +85,5 @@ export function GetStatus(): Promise<string> {
         }),
     })
         .then((res) => res.json())
-        .then((res) => res.data.user.status.message);
+        .then((res) => res.data.user.status);
 }

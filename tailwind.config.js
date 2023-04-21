@@ -13,8 +13,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        logo: ['logo', 'ui-sans-serif', 'ui-monospace'],
-        h1: ['h1', 'ui-sans-serif', 'ui-monospace'],
+        logo: ['logo', 'var(--font-display)'],
+        h1: ['h1', 'var(--font-display)'],
       },
       colors: {
         bg: 'var(--colors-bg)',
