@@ -1,4 +1,4 @@
-export const enum StatusCode {
+export enum StatusCode {
     OK = "OK",
     DEGRADED = "DEGRADED",
     MINOR = "MINOR",
