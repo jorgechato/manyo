@@ -29,13 +29,14 @@ $ npm install @jorgechato/manyo
 
 ```js
 import {
-    Footer, Header, Logo, // for basic layout
+    Footer, Header, // for basic layout
+    Logo, // for building a cool logo based on your font-family
+    Indicator, Project, ProjectList, StatusPageInfo // for status page
+    Readme, // for code content
+    Repository, RepositoryList, // for github repos
 
     // COMMING SOON
     Article, ArticleList, Tags, // for cms content
-    Readme, // for code content
-    Indicator, Project, ProjectList, // for status page
-    Repository, RepositoryList, // for github repos
 } from '@jorgechato/manyo'
 ```
 
