@@ -1,4 +1,4 @@
-import { StatusCode } from '@/src/lib/status-page/StatusPage.types';
+import { StatusCode } from '@/lib/status-page/StatusPage.types';
 
 
 export function Indicator({ type }: { type: StatusCode }) {

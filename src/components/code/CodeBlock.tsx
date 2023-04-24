@@ -1,8 +1,13 @@
 'use client';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import hljs from 'highlight.js/lib/core';
-import { CodeBlockProps } from './CodeBlock.types';
+
+
+type CodeBlockProps = {
+    className?: string;
+    children: any;
+}
 
 
 export function CodeBlock(props: CodeBlockProps) {

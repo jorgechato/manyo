@@ -1,11 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { GetStatus } from '../../lib/status-page/FetchData';
-import { Status, StatusCode } from '../../lib/status-page/StatusPage.types';
-import { Project as ProjectType } from '../types/Config.types';
+import { GetStatus } from '@/lib/status-page/FetchData';
+import { Status, StatusCode } from '@/lib/status-page/StatusPage.types';
+import { Project as ProjectType } from '@/components/types/Config';
 import { Indicator } from './Indicator';
-import { Logo } from '../logo/Logo';
+import { Logo } from '@/components/logo/Logo';
 
 
 export function Project({ url, name }: ProjectType) {

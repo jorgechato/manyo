@@ -1,6 +1,10 @@
 import { ThemeButton } from './ThemeButton';
-import { Logo } from '@/src/components/logo/Logo';
-import { HeaderType } from './Header.types';
+import { Logo } from '@/components/logo/Logo';
+
+
+type HeaderType = {
+    title: string;
+};
 
 
 export function Header(props: HeaderType = {title: ""}) {

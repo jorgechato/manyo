@@ -1,4 +1,4 @@
-# Manyo - React/Next components
+# Manyo - React components
 
 > A collection of React components to standarice mypersonal brand
 
@@ -34,6 +34,7 @@ import {
     Indicator, Project, ProjectList, StatusPageInfo // for status page
     Readme, // for code content
     Repository, RepositoryList, // for github repos
+    lib, // for utils and types
 
     // COMMING SOON
     Article, ArticleList, Tags, // for cms content
@@ -46,7 +47,7 @@ You can inherit the tailwindcss configuration from this package.
 
 ```js
 // tailwind.config.js
-const tailwindConfig = require('@jorgechato/manyo/tailwind.config');
+const tailwindConfig = require('@jorgechato/manyo/tailwind');
 
 
 // tailwindConfig.theme.extend.colors.accent = colors.blue[600];
@@ -62,7 +63,7 @@ module.exports = tailwindConfig;
 To import the styling just add the following line wherever you want to use the styles.
 
 ```js
-import '@jorgechato/manyo/dist/style/lib.css';
+import '@jorgechato/manyo/styles';
 ```
 
 ### Fonts
@@ -156,20 +157,14 @@ It renders a project card with a title, description, tags and a link to the repo
 It's required that you create a `/api/git/repositories` endpoint that returns the following object as an object list.
 
 ```js
-export interface Repository {
-    name: string;
-    description: string;
-    url: string;
-    homepageUrl: string;
-    stargazerCount: number;
-    forkCount: number;
-    primaryLanguage: {
-        name: string;
-        color: string;
-    };
-}
+import { lib } from '@jorgechato/manyo';
 
-// return Repository[]
+
+export async function GET() {
+  const data: lib.ProfileStatus = await lib.GetStatus();
+
+  return NextResponse.json(data);
+}
 ```
 
 ### `Project` & `ProjectList` component
@@ -180,26 +175,20 @@ It's part of the status page components, which means that it's going to check th
 I recommend you to have a `/api/health-check` endpoint that returns the following object in each project you want to add.
 
 ```js
-export enum StatusType {
-    OK = "OK",
-    DEGRADED = "DEGRADED",
-    MINOR = "MINOR",
-    MAJOR = "MAJOR",
-    MAINTENANCE = "MAINTENANCE",
-    UNKNOWN = "UNKNOWN",
-}
+import { lib } from '@jorgechato/manyo';
 
-export interface Status {
-    name: string;
-    type: StatusType;
-    url: string;
-    version?: string;
-    description?: string;
-    color?: string;
-    watching?: string;
-}
 
-// return Status
+export async function GET() {
+    const status: lib.StatusPage = {
+        name: "name",
+        type: lib.StatusPageCode.OK,
+        url: 'url of the project',
+        version: packageInfo.version,
+        description: packageInfo.description,
+    };
+
+    return NextResponse.json(status);
+}
 ```
 
 You will need to pass a list of project as a prop to the `ProjectList` component.
@@ -230,5 +219,5 @@ projects = [
 
 - [ ] Add more components
 - [ ] Add tests
-- [ ] Remove next as dependency
-- [ ] Fix `@` import
+- [x] Remove next as dependency
+- [x] Add cjs support

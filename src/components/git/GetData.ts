@@ -1,4 +1,4 @@
-import { PinnedRepos } from "@/src/lib/github/Github.types"
+import { PinnedRepos } from "@/lib/github/Github.types"
 
 
 export function GetStatus(): Promise<string> {

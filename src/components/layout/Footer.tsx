@@ -1,7 +1,11 @@
-import Link from 'next/link'
+import { Social, SiteMap } from '@/components/types/Config';
 
-import { FooterType } from './Footer.types';
-import { Social, SiteMap } from '@/src/components/types/Config.types';
+
+type FooterType = {
+    socials?: Social[];
+    siteMap?: SiteMap[];
+    author?: string;
+}
 
 
 export function Footer(props: FooterType = {siteMap: [], socials: [], author: "Jorge Chato"}) {
@@ -15,9 +19,9 @@ export function Footer(props: FooterType = {siteMap: [], socials: [], author: "J
 
     const siteMapJSX = props.siteMap?.map((endpoint: SiteMap) => (
         <li key={endpoint.name} className="text-grey-darkest">
-            <Link href={endpoint.url}>
+            <a href={endpoint.url}>
                 {endpoint.name}
-            </Link>
+            </a>
         </li>
     ));
     const year = new Date().getFullYear();

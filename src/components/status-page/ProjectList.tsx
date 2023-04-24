@@ -1,6 +1,10 @@
-import { Project as ProjectType } from '@/src/components/types/Config.types';
+import { Project as ProjectType } from '@/components/types/Config';
 import { Project } from "./Project";
-import { ProjectListProps } from './ProjectList.types';
+
+
+export type ProjectListProps = {
+    projects: ProjectType[];
+};
 
 
 export function ProjectList(props: ProjectListProps) {
