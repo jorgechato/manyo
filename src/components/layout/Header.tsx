@@ -1,5 +1,5 @@
 import { ThemeButton } from './ThemeButton';
-import { Logo } from '../logo/Logo';
+import { Logo } from '@/src/components/logo/Logo';
 import { HeaderType } from './Header.types';
 
 

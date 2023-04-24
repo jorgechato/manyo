@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { FooterType } from './Footer.types';
-import { Social, SiteMap } from '../types/Config.types';
+import { Social, SiteMap } from '@/src/components/types/Config.types';
 
 
 export function Footer(props: FooterType = {siteMap: [], socials: [], author: "Jorge Chato"}) {

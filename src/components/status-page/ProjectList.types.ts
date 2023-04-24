@@ -1,4 +1,4 @@
-import { Project as ProjectType } from '../types/Config.types';
+import { Project as ProjectType } from '@/src/components/types/Config.types';
 
 export type ProjectListProps = {
     projects: ProjectType[];

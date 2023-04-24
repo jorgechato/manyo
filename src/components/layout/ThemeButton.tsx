@@ -1,6 +1,7 @@
+'use client';
 import { useEffect } from 'react';
 
-import { RegisterLanguages } from '../../lib/github/RegisterLanguages';
+import { RegisterLanguages } from '@/src/lib/github/RegisterLanguages';
 
 
 function setInitialTheme(isDarkMode: boolean) {

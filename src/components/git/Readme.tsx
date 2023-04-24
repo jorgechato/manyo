@@ -1,10 +1,11 @@
+'use client';
 import { useEffect, useState } from 'react';
 
 import Markdown from 'markdown-to-jsx';
 const emoji = require('emoji-dictionary');
 
 import { FileSkeleton } from "./ReadmeSkeleton";
-import { CodeBlock } from '../code/CodeBlock';
+import { CodeBlock } from '@/src/components/code/CodeBlock';
 import { GetReadme } from './GetData';
 
 
