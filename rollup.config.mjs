@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import terser from '@rollup/plugin-terser';
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import copy from 'rollup-plugin-copy';
@@ -70,13 +71,16 @@ export default [
     */
     {
         input: "src/index.ts",
-        external: ['react-dom'],
         output: {
             dir: 'dist/cjs',
             format: "cjs",
             ...outputOptions,
         },
         plugins: [
+            peerDepsExternal(),
+            resolve(),
+            commonjs(),
+            typescript({ tsconfig: "./tsconfig-cjs.json" }),
             postcss({
                 config: {
                     path: './postcss.config.mjs',
@@ -85,9 +89,6 @@ export default [
                 minimize: true,
                 extract: "lib.css",
             }),
-            resolve(),
-            commonjs(),
-            typescript({ tsconfig: "./tsconfig-cjs.json" }),
             preserveDirectives.default(),
             terser(),
             analyze({
@@ -105,13 +106,16 @@ export default [
     },
     {
         input: "src/index.ts",
-        external: ['react-dom'],
         output: {
             dir: 'dist/esm',
             format: "esm",
             ...outputOptions,
         },
         plugins: [
+            peerDepsExternal(),
+            resolve(),
+            commonjs(),
+            typescript({ tsconfig: "./tsconfig-esm.json" }),
             postcss({
                 config: {
                     path: './postcss.config.mjs',
@@ -120,9 +124,6 @@ export default [
                 minimize: true,
                 extract: "lib.css",
             }),
-            resolve(),
-            commonjs(),
-            typescript({ tsconfig: "./tsconfig-esm.json" }),
             preserveDirectives.default(),
             terser(),
             analyze({
