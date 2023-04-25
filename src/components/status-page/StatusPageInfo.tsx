@@ -1,5 +1,5 @@
 import { Indicator } from "./Indicator";
-import { StatusCode } from "@/lib/status-page/StatusPage.types";
+import { StatusCode } from "../../lib/status-page/StatusPage.types";
 
 
 export function StatusPageInfo() {

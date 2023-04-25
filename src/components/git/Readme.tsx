@@ -5,7 +5,7 @@ import Markdown from 'markdown-to-jsx';
 const emoji = require('emoji-dictionary');
 
 import { FileSkeleton } from "./ReadmeSkeleton";
-import { CodeBlock } from '@/components/code/CodeBlock';
+import { CodeBlock } from '../code/CodeBlock';
 import { GetReadme } from './GetData';
 
 

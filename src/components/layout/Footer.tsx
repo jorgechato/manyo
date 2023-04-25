@@ -1,4 +1,4 @@
-import { Social, SiteMap } from '@/components/types/Config';
+import { Social, SiteMap } from '../types/Config';
 
 
 type FooterType = {

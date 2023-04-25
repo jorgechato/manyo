@@ -1,4 +1,4 @@
-import { Project as ProjectType } from '@/components/types/Config';
+import { Project as ProjectType } from '../types/Config';
 import { Project } from "./Project";
 
 

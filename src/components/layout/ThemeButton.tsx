@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 
-import { RegisterLanguages } from '@/lib/github/RegisterLanguages';
+import { RegisterLanguages } from '../../lib/github/RegisterLanguages';
 
 
 export function ThemeButton() {

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
-import { PinnedRepos } from '@/lib/github/Github.types';
+import { PinnedRepos } from '../../lib/github/Github.types';
 import { Repository } from './Repository';
 import { RepositorySkeleton } from './RepositorySkeleton';
 import { GetPinnedRepos } from './GetData';

@@ -1,5 +1,5 @@
 import { ThemeButton } from './ThemeButton';
-import { Logo } from '@/components/logo/Logo';
+import { Logo } from '../logo/Logo';
 
 
 type HeaderType = {
