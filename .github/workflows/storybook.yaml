@@ -1,13 +1,8 @@
 name: Release Storybook to GitHub Pages
-
 on:
   push:
     branches:
-      -main
-
-env:
-  cache-version: v1
-
+      - main
 jobs:
   releases:
     name: Project Build
