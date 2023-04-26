@@ -1,9 +1,9 @@
 type TagsProps = {
     tags: string[],
-    hover?: boolean,
+    hover: boolean,
 }
 
-export function Tags(props: TagsProps = { tags: [], hover: true }) {
+export function Tags(props: TagsProps) {
     return (
         <>
             {

@@ -30,7 +30,7 @@ export function Article(props: ArticleProps) {
                     </h1>
 
                     <div className="container font-display text-grey-darkest mx-auto px-4 text-xs mt-4 mb-12 tracking-wide text-center">
-                        <Tags tags={article.data.tags} />
+                        <Tags tags={article.data.tags} hover={true} />
                     </div>
 
                     <div className="container font-display text-grey-darkest mx-auto px-4 text-xs mt-14 mb-12 tracking-wide text-center">
@@ -60,7 +60,7 @@ export function Article(props: ArticleProps) {
                     </Markdown>
                 </article>
                 <div className="container font-display text-grey-darkest mx-auto px-4 text-xs mt-10 mb-12 tracking-wide text-center">
-                    <Tags tags={article.data.tags} />
+                    <Tags tags={article.data.tags} hover={true} />
                 </div>
             </article>
         </>
