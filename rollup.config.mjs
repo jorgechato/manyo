@@ -25,50 +25,6 @@ const outputOptions = {
 };
 
 export default [
-    /*
-    {
-        input: "src/index.ts",
-        external: ['react', 'react-dom'],
-        output: [
-            {
-                file: packageJson.main,
-                format: "cjs",
-                ...outputOptions,
-            },
-            {
-                file: packageJson.module,
-                format: "esm",
-                ...outputOptions,
-            },
-        ],
-        plugins: [
-            postcss({
-                config: {
-                    path: './postcss.config.js',
-                },
-                extensions: ['.css'],
-                minimize: true,
-                extract: "lib.css",
-            }),
-            resolve(),
-            commonjs(),
-            typescript({ tsconfig: "./tsconfig.json" }),
-            preserveDirectives.default(),
-            terser(),
-            analyze({
-                hideDeps: true,
-                limit: 0,
-                summaryOnly: true,
-            }),
-        ],
-        // Ignore warnings when using "use client" directive
-        onwarn(warning, warn) {
-            if (warning.code !== 'MODULE_LEVEL_DIRECTIVE') {
-                warn(warning);
-            }
-        },
-    },
-    */
     {
         input: "src/index.ts",
         output: {

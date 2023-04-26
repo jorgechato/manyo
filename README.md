@@ -27,6 +27,8 @@ $ npm install @jorgechato/manyo
 
 ## List of components you can use
 
+You can get a full list of components in the [storybook](https://manyo.jorgechato.com/).
+
 ```js
 import {
     Footer, Header, // for basic layout
@@ -34,10 +36,8 @@ import {
     Indicator, Project, ProjectList, StatusPageInfo // for status page
     Readme, // for code content
     Repository, RepositoryList, // for github repos
-    lib, // for utils and types
-
-    // COMMING SOON
     Article, ArticleList, Tags, // for cms content
+    lib, // for utils and types
 } from '@jorgechato/manyo'
 ```
 
@@ -63,7 +63,7 @@ module.exports = tailwindConfig;
 To import the styling just add the following line wherever you want to use the styles.
 
 ```js
-import '@jorgechato/manyo/styles';
+import '@jorgechato/manyo/dist/style/lib.css';
 ```
 
 ### Fonts
@@ -217,7 +217,7 @@ projects = [
 
 ## Improvements
 
-- [ ] Add more components
+- [x] Add more components
 - [ ] Add tests
+- [ ] Add storybook components
 - [x] Remove next as dependency
-- [x] Add cjs support

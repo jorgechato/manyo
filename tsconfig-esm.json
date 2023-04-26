@@ -3,5 +3,11 @@
     "compilerOptions": {
         "outDir": "dist/esm",
         "declarationDir": "dist/esm/types",
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "test",
+        "src/**/*.stories.ts",
+        "src/**/*.spec.ts"]
 }

@@ -3,5 +3,11 @@
     "compilerOptions": {
         "outDir": "dist/cjs",
         "declarationDir": "dist/cjs/types",
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "test",
+        "src/**/*.stories.ts",
+        "src/**/*.spec.ts"]
 }
