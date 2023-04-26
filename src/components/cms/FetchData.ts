@@ -3,10 +3,13 @@ import fs from 'fs';
 import matter from 'gray-matter';
 const emoji = require('emoji-dictionary');
 
-import { ArticleTypes } from './Article.types';
+import { ArticleMetadata } from './Article.types';
 
 
-export function GetArticleContent(slug: string, folder: string='content/articles') {
+export function GetArticleContent(
+    slug: string,
+    folder: string = 'content/articles'
+) {
     const file = `${folder}/${slug}.md`;
     try {
         const rawFile = fs.readFileSync(file, 'utf8');
@@ -20,7 +23,12 @@ export function GetArticleContent(slug: string, folder: string='content/articles
     }
 }
 
-export function GetArticlesMetadata(tag: string = '',limit: number = Infinity, folder: string='content/articles'): ArticleTypes[] {
+
+export function GetArticlesMetadata(
+    tag: string = '',
+    limit: number = Infinity,
+    folder: string = 'content/articles'
+): ArticleMetadata[] {
     const files = fs.readdirSync(folder);
     const mdArticles = files.filter((file) => file.endsWith('.md'));
 

@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 
-import { ArticleTypes } from './Article.types';
+import { ArticleMetadata } from './Article.types';
 import { GetArticlesMetadata } from './FetchData';
 import { Tags } from './Tags';
 
@@ -12,7 +12,7 @@ type ArticleListProps = {
 }
 
 export function ArticleList(props: ArticleListProps) {
-    const articlesMetadata: ArticleTypes[] = GetArticlesMetadata(props.tag, props.limit);
+    const articlesMetadata: ArticleMetadata[] = GetArticlesMetadata(props.tag, props.limit);
 
     const articlesPreview = articlesMetadata.map((article) => {
         const date = format(new Date(article.date), 'dd LLL yyyy');
