@@ -217,7 +217,6 @@ projects = [
 
 ## Improvements
 
-- [x] Add more components
 - [ ] Add tests
 - [ ] Add storybook components
 - [x] Remove next as dependency
