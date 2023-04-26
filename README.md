@@ -27,6 +27,8 @@ $ npm install @jorgechato/manyo
 
 ## List of components you can use
 
+> Info: This library requires `react`, `react-dom` and `next`as peer dependencies. Currently I'm working to remove the `next` dependency without affecting the performance of the components.
+
 You can get a full list of components in the [storybook](https://manyo.jorgechato.com/).
 
 ```js
@@ -219,4 +221,4 @@ projects = [
 
 - [ ] Add tests
 - [ ] Add storybook components
-- [x] Remove next as dependency
+- [ ] Remove next as dependency

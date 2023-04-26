@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Social, SiteMap } from '../types/Config';
 
 
@@ -19,9 +21,9 @@ export function Footer(props: FooterType = {siteMap: [], socials: [], author: "J
 
     const siteMapJSX = props.siteMap?.map((endpoint: SiteMap) => (
         <li key={endpoint.name} className="text-grey-darkest">
-            <a href={endpoint.url}>
+            <Link href={endpoint.url}>
                 {endpoint.name}
-            </a>
+            </Link>
         </li>
     ));
     const year = new Date().getFullYear();

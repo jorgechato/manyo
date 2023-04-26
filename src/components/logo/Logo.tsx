@@ -1,3 +1,6 @@
+import Link from 'next/link';
+
+
 type LogoType = {
     appName: string;
     url: string;
@@ -8,9 +11,9 @@ type LogoType = {
 export function Logo(props: LogoType) {
     
     return (
-        <a href={props.url} className="relative">
+        <Link href={props.url} className="relative">
             <div dangerouslySetInnerHTML={{ __html: props.appName }} className="font-logo font-bold"></div>
             {props.children}
-        </a>
+        </Link>
     )
 }
