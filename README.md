@@ -219,6 +219,7 @@ projects = [
 
 ## Improvements
 
+- [ ] Fix <a> tag as next/react <Link>
 - [ ] Add tests
 - [ ] Add storybook components
 - [ ] Remove next as dependency

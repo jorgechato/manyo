@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { format } from 'date-fns'
 
 import { ArticleMetadata } from './Article.types';
@@ -21,7 +19,7 @@ export function ArticleList(props: ArticleListProps) {
 
         return (
             <li key={article.slug} className="group">
-                <Link href={`/${article.slug}`}>
+                <a href={`/${article.slug}`}>
                     <span className="font-bold decoration-[3px]
                     group-hover:decoration-accent group-hover:underline-offset-4
                     transition-all duration-200
@@ -34,7 +32,7 @@ export function ArticleList(props: ArticleListProps) {
                     <p>
                         <Tags tags={article.tags} hover={false} />
                     </p>
-                </Link>
+                </a>
             </li>
         )
     });

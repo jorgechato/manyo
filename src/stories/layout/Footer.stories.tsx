@@ -8,9 +8,9 @@ const meta: Meta<typeof Footer> = {
     title: "Footer",
     component: Footer,
     argTypes: {
-        socials: { control: "array" },
-        siteMap: { control: "array" },
-        author: { control: "text" },
+        socials: { control: "object", required: false },
+        siteMap: { control: "object", required: false },
+        author: { control: "text", required: false },
     },
 };
 
@@ -36,5 +36,13 @@ export const Primary: StoryType = {
             { name: "About", url: "/about" }
         ],
         author: "Jorge Chato",
+    },
+};
+
+export const Default: StoryType = {
+    render: () => <Footer />,
+    args: {
+        socials: [],
+        siteMap: [],
     },
 };
