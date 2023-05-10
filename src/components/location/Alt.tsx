@@ -24,7 +24,7 @@ export function Alt(props: AltProps) {
                 props.in != undefined &&
                 (
                     <div className='font-h1 font-bold text-xs text-grey-darker'>
-                        Leaving for {props.next?.country} {DateTime.fromFormat(props.in, "YYYY-MM-DD").toRelativeCalendar()}
+                        Leaving for {props.next?.country} {DateTime.fromFormat(props.in, "yyyy-MM-dd").toRelativeCalendar()}
                     </div>
                 )
             }

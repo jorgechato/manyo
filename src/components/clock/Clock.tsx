@@ -40,7 +40,7 @@ export function Clock(props: ClockProps) {
     return (
         <div className="flex relative tabular-nums rounded-full w-20 h-20 text-grey-darker
         text-xl font-h1 font-bold ring-4 ring-offset-3 ring-offset-bg ring-grey-lightest
-        items-center fustify-center mx-auto my-4 cursor-cell scale-100
+        items-center fustify-center mx-auto mt-10 cursor-cell scale-100
         group hover:scale-110 duration-300">
             <div className="m-auto">
                 {!loading && timeZone.toFormat('HH:mm') || "00:00"}

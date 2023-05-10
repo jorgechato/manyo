@@ -28,7 +28,7 @@ export function TripList(props: TripListProps) {
                             <h3 className="ml-2 flex items-center mb-1 font-semibold
                             group-hover:scale-105 scale-100 duration-300 transition-scale">{trip.city}</h3>
                             <time className="ml-2 block mb-2 text-sm font-normal leading-none text-grey-medium">
-                                {DateTime.fromFormat(trip.dateStart, "YYYY-MM-DD").toLocaleString(DateTime.DATE_MED)}
+                                {DateTime.fromFormat(trip.dateStart, "yyyy-MM-dd").toLocaleString(DateTime.DATE_MED)}
                             </time>
                         </li>
                     )
