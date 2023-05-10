@@ -18,7 +18,7 @@ module.exports = {
       },
       colors: {
         bg: 'var(--colors-bg)',
-        accent: colors.emerald[600],
+        accent: 'var(--colors-accent)',
         body: 'var(--colors-body)',
         headings: 'var(--colors-headings)',
         primary: 'var(--colors-primary)',
@@ -39,8 +39,8 @@ module.exports = {
           darkest: 'var(--colors-grey-darkest)',
         },
         code: {
-          'bg': 'var(--colors-code-bg)',
-          'color': 'var(--colors-code)',
+          bg: 'var(--colors-code-bg)',
+          color: 'var(--colors-code)',
         }
       },
       borderColor: (theme) => ({

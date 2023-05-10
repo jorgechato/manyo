@@ -13,6 +13,7 @@
     --font-logo: 'logo', var(--font-display);
     --font-h1: 'h1', var(--font-display);
 
+    --colors-accent: #059669;
     --colors-primary: #0040dd;
     --colors-primary-light: color(#0040dd l(90%));
     --colors-primary-lightest: color(#0040dd l(95%));
