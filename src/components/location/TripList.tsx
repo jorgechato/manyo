@@ -1,22 +1,21 @@
-import moment from 'moment';
+import { DateTime } from "luxon";
 const emoji = require('emoji-dictionary');
 
 import { Location } from '../../lib/nomadlist/NomadList.types';
 
 
 type TripListProps = {
-    loading: boolean,
-    trips?: Location[],
+    trips: Location[],
 }
 
 export function TripList(props: TripListProps) {
     return (
-        <div className='mt-10 w-fit m-auto'>
+        <div className='mt-10 w-fit mx-auto'>
 
-            {!props.loading && props.trips ? <div className='font-h1 text-lg font-bold mb-6 text-grey-darkest'>Upcoming trips</div> : <></>}
+            {props.trips ? <div className='font-h1 text-lg font-bold mb-6 text-grey-darkest'>Upcoming trips</div> : <></>}
 
             <ol className="relative border-l border-grey-lightest text-left cursor-cell">
-                {!props.loading && props.trips?.map((trip) => {
+                {props.trips?.map((trip) => {
                     const flag = emoji.getUnicode(trip.countryCode.toLocaleLowerCase()) ?? emoji.getUnicode(trip.countrySlug);
 
                     return (
@@ -29,7 +28,7 @@ export function TripList(props: TripListProps) {
                             <h3 className="ml-2 flex items-center mb-1 font-semibold
                             group-hover:scale-105 scale-100 duration-300 transition-scale">{trip.city}</h3>
                             <time className="ml-2 block mb-2 text-sm font-normal leading-none text-grey-medium">
-                                {moment(trip.dateStart, "YYYY-MM-DD").format('ll')}
+                                {DateTime.fromFormat(trip.dateStart, "YYYY-MM-DD").toLocaleString(DateTime.DATE_MED)}
                             </time>
                         </li>
                     )

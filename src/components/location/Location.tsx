@@ -6,6 +6,9 @@ import { NomadList } from '../../lib/nomadlist/NomadList.types';
 import { Marker } from './Marker';
 import { Alt } from './Alt';
 import { TripList } from './TripList';
+import { Clock } from '../clock';
+import { MarkerSkeleton } from './MarkerSkeleton';
+import { AltSkeleton } from './AltSkeleton';
 
 
 export function Location({ of }: { of: string }) {
@@ -33,9 +36,10 @@ export function Location({ of }: { of: string }) {
     return (
         <>
             <div className='w-full object-center m-auto text-center select-none'>
-                <Marker loading={loading} thumbnail={thumbnail} />
-                <Alt of={of} loading={loading} now={nomadList?.location.now} next={nomadList?.location.next} in={nextIn} />
-                <TripList loading={loading} trips={nomadList?.trips} />
+                {loading && <MarkerSkeleton /> || <Marker thumbnail={thumbnail} />}
+                {loading && <AltSkeleton of={of}/> || <Alt of={of} now={nomadList?.location.now} next={nomadList?.location.next} in={nextIn} />}
+                {!loading && nomadList!=undefined && <Clock lat={nomadList?.location.now.latitude} long={nomadList?.location.now.longitude} traveler={of} />}
+                {!loading && nomadList!=undefined && <TripList trips={nomadList?.trips} />}
             </div>
         </>
     );
