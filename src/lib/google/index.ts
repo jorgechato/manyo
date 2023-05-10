@@ -1,0 +1,1 @@
+export { GetTimeZoneId } from './FetchData';
