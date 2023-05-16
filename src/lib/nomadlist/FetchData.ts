@@ -1,7 +1,7 @@
 import { NomadList, Location } from "./NomadList.types";
 
 
-function cleanURL(url: string): string {
+function cleanURL(url: string|undefined): string {
     if (!url) {
         return "";
     }
