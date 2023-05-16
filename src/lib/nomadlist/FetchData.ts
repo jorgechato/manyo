@@ -1,6 +1,19 @@
 import { NomadList, Location } from "./NomadList.types";
 
 
+function cleanURL(url: string): string {
+    if (!url) {
+        return "";
+    }
+
+    const urlArray = url.split("https://");
+
+    if (urlArray.length > 2) {
+        return `https://nomadlist.com/cdn-cgi/image/format=auto,fit=cover,width=250,height=320/https://${urlArray[urlArray.length-1]}`
+    }
+    return url.replace("width=100,height=100", "width=250,height=320");
+}
+
 function nomadLocationToLocation(nomadLocation: any): Location {
     const city = nomadLocation.place ?? nomadLocation.city;
     const citySlug = nomadLocation.place_slug ?? nomadLocation.city_slug;
@@ -11,7 +24,7 @@ function nomadLocationToLocation(nomadLocation: any): Location {
         country: nomadLocation.country,
         countrySlug: nomadLocation.country_slug,
         countryCode: nomadLocation.country_code,
-        thumbnail: nomadLocation.place_photo?.replace("width=100,height=100", "width=250,height=320")||"",
+        thumbnail: cleanURL(nomadLocation.place_photo),
         latitude: nomadLocation.latitude,
         longitude: nomadLocation.longitude,
         dateStart: nomadLocation.date_start,
