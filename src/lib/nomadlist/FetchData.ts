@@ -21,8 +21,6 @@ export function cleanURL(url: string|undefined): string {
 function nomadLocationToLocation(nomadLocation: any): Location {
     const city = nomadLocation.place ?? nomadLocation.city;
     const citySlug = nomadLocation.place_slug ?? nomadLocation.city_slug;
-    console.log(nomadLocation.place_photo);
-    console.log(cleanURL(nomadLocation.place_photo));
 
     return {
         city: city,
