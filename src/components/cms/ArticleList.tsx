@@ -9,17 +9,19 @@ type ArticleListProps = {
     limit?: number,
     tag?: string,
     folder?: string,
+    endpoint?: string,
 }
 
 export function ArticleList(props: ArticleListProps) {
     const articlesMetadata: ArticleMetadata[] = GetArticlesMetadata(props.tag, props.limit);
+    const endpoint = props.endpoint ?? '';
 
     const articlesPreview = articlesMetadata.map((article) => {
         const date = format(new Date(article.date), 'dd LLL yyyy');
 
         return (
             <li key={article.slug} className="group">
-                <a href={`/${article.slug}`}>
+                <a href={`${endpoint}/${article.slug}`}>
                     <span className="font-bold decoration-[3px]
                     group-hover:decoration-accent group-hover:underline-offset-4
                     transition-all duration-200
