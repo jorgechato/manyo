@@ -11,6 +11,8 @@ type AltProps = {
 }
 
 export function Alt(props: AltProps) {
+    const next = props.next?.country == props.now?.country ? props.next?.city + ', ' + props.next?.countryCode.toLocaleUpperCase() : props.next?.country;
+
     return (
         <>
             <div className="font-h1 font-bold mt-4 text-lg">
@@ -24,7 +26,7 @@ export function Alt(props: AltProps) {
                 props.in != undefined &&
                 (
                     <div className='font-h1 font-bold text-xs text-grey-darker'>
-                        Leaving for {props.next?.country} {DateTime.fromFormat(props.in, "yyyy-MM-dd").toRelativeCalendar()}
+                        Leaving for {next} {DateTime.fromFormat(props.in, "yyyy-MM-dd").toRelativeCalendar()}
                     </div>
                 )
             }
